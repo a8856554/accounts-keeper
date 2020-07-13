@@ -1,0 +1,32 @@
+.account-content-bg {
+    min-height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.account-content-bg.init {
+    background-image: url('../images/bookstore.jpg') ; 
+    
+}
+
+.account-content {
+    min-height: 30rem;
+    max-width: 40rem;
+    position: relative;
+    background-color:rgb(255, 240, 190);
+    border-radius:1em;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    opacity: 1;
+}
+
+.ceiling{
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    height: 2em;
+    margin-top: 0em;
+    width: 100%;
+    background-color:rgb(255, 255, 255);
+}

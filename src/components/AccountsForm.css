@@ -1,0 +1,41 @@
+
+
+/* 超過 768px */
+@media screen and (min-width: 768px) {
+    #AccountsForm {
+        width: 100%;
+        position: relative;
+        margin: 0 1.5rem 0 1.5rem;
+    }
+    #AccountsInput, #AccountsSubmit{
+        max-width: 9.8rem;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+}
+  
+  /* 介於 480px 與 767px 之間 */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #AccountsForm {
+        width: 100%;
+        position: relative;
+        margin: 0 1.5rem 0 1.5rem;
+        display: block;
+    }
+    #AccountsInput, #AccountsSubmit{
+        max-width: 80%;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+}
+/* 未滿 480px，即 479px 以下 */
+@media screen and (max-width: 479px) {
+    #AccountsForm {
+        width: 100%;
+        position: relative;
+        margin: 0 1.5rem 0 1.5rem;
+        display: block;
+    }
+    #AccountsInput, #AccountsSubmit{
+        max-width: 80%;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+}
