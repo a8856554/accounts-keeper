@@ -12,6 +12,7 @@ export default class AccountsForm extends React.Component {
             consumption: "",
             amount: 0,
             date: "",
+            tag: "",
             items: {}
         };
         
@@ -39,6 +40,11 @@ export default class AccountsForm extends React.Component {
                 <Input type="date" name="date" id="AccountsInput" innerRef={el => {this._inputElement.date = el}} onChange={this.handleInputChange } placeholder="日期" />
               </FormGroup>
               {' '}
+              <FormGroup id = "TagFormGroup">
+                <Label for="exampleTag" hidden>Tag</Label>
+                <Input type="text" name="tag" id="TagInput"  innerRef={el => {this._inputElement.tag = el}} onChange={this.handleInputChange } placeholder="Tag" />
+              </FormGroup>
+              {' '}
               <Button color="info" id="AccountsSubmit" innerRef={el => {this._inputElement.submit = el}}>Submit</Button>
             </Form>
           );
@@ -64,6 +70,7 @@ export default class AccountsForm extends React.Component {
                     consumption: prevState.consumption,
                     amount: prevState.amount,
                     date: prevState.date,
+                    tag: prevState.tag,
                     key: Date.now()
                 };
                 this.clearInputElement();
@@ -72,7 +79,8 @@ export default class AccountsForm extends React.Component {
                     items: newItem,
                     consumption: "",
                     amount: 0,
-                    date: ""
+                    date: "",
+                    tag: ""
                 };
             });
         }
@@ -99,7 +107,8 @@ export default class AccountsForm extends React.Component {
         this._inputElement.consumption.value = "";
         this._inputElement.amount.value = 0;
         this._inputElement.date.value = "";
-        this._inputElement.submit.block = true;
+        this._inputElement.tag.value = "";
+        //this._inputElement.submit.block = true;
     }
     
 }

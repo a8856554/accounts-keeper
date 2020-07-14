@@ -6,11 +6,21 @@
         width: 100%;
         position: relative;
         margin: 0 1.5rem 0 1.5rem;
+        
     }
-    #AccountsInput, #AccountsSubmit{
+    #AccountsInput, #AccountsSubmit {
         max-width: 9.8rem;
         margin: 0.5rem 0.5rem 0.5rem 0.5rem;
     }
+    #TagInput {
+        /*max-width: 100%;*/
+        width:100%;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    #TagFormGroup {
+        width:54%;
+    }
+    
 }
   
   /* 介於 480px 與 767px 之間 */
@@ -25,6 +35,11 @@
         max-width: 80%;
         margin: 0.5rem 0.5rem 0.5rem 0.5rem;
     }
+    #TagInput {
+        max-width: 80%;;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    
 }
 /* 未滿 480px，即 479px 以下 */
 @media screen and (max-width: 479px) {
@@ -38,4 +53,9 @@
         max-width: 80%;
         margin: 0.5rem 0.5rem 0.5rem 0.5rem;
     }
+    #TagInput {
+        max-width: 80%;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    
 }

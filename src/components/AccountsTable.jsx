@@ -13,14 +13,24 @@ export default class AccountsTable extends React.Component {
         
         this.state = {
             items: initItems,
-            total: initTotal
+            total: initTotal,
+            expandedRows : []
         };
         this.createNewItem = this.createNewItem.bind(this);
+        
     }
 
     render() {
         let tableItems = this.state.items;
-        tableItems = tableItems.map(i => this.createNewItem(i));
+        //tableItems = tableItems.map(i => this.createNewItem(i));
+        tableItems = tableItems.map(
+            (i)=>{
+                if(this.state.expandedRows.includes(i.key)){
+                    return this.createNewItem(i).concat( this.expandTagItem(i));
+                }
+                else{ return this.createNewItem(i)}
+            }
+        );
         return (
             <Table id = "accounts-table"  hover >
                 <thead>
@@ -45,6 +55,7 @@ export default class AccountsTable extends React.Component {
             </Table>
         );
     }
+    
     componentDidUpdate(prevProps) {
         //Don't forget to compare props
         if (this.props.newItem !== prevProps.newItem) {
@@ -85,16 +96,46 @@ export default class AccountsTable extends React.Component {
     }
 
     createNewItem(newItem){
-        return (
-            <tr key = {newItem.key}> 
+        return [
+            <tr onClick={(e) => this.handleRowClick(newItem.key)} key = {newItem.key}> 
                 <td>{newItem.consumption}</td>
                 <td id = "amount">{parseFloat(newItem.amount).toFixed(2)}</td>
                 <td>{newItem.date}</td>
             </tr>
-        );
+        ];
+    }
+    expandTagItem(newItem){
+        return [
+            <tr key = {`expand-rows-${newItem.key}`}> 
+                <td>{newItem.tag}</td>
+            </tr>
+        ];
+    }
+    handleRowClick(rowKey) {
+        /*
+        this.setState((prevState) =>{
+            const currentExpandedRows = prevState.expandedRows;
+            const isRowCurrentlyExpanded = currentExpandedRows.includes(rowKey);
+            const newExpandedRows = isRowCurrentlyExpanded ? 
+			        currentExpandedRows.filter(id => id !== rowKey) : 
+                    currentExpandedRows.concat(rowKey);
+            return {expandedRows : newExpandedRows};
+        });
+        console.log(`current ${this.state.expandedRows}`);
+        */
+        
+        const currentExpandedRows = this.state.expandedRows;
+        const isRowCurrentlyExpanded = currentExpandedRows.includes(rowKey);
+        
+        const newExpandedRows = isRowCurrentlyExpanded ? 
+			currentExpandedRows.filter(id => id !== rowKey) : 
+			currentExpandedRows.concat(rowKey);
+        //console.log(`current ${newExpandedRows}`);
+        this.setState({expandedRows : newExpandedRows} );
+        //this.setState(prevState => {console.log(`prevstate ${this.state.expandedRows}`)});
+        console.log(`Click table item ${rowKey}`);
         
     }
-    
 
     
 }
