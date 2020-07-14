@@ -6,7 +6,15 @@
         width: 100%;
         position: relative;
         margin: 0 1.5rem 0 1.5rem;
-        
+        height: 6.8rem;
+        transition: 0.5s ease-out;
+    }
+    #AccountsForm-closed{
+        width: 100%;
+        position: relative;
+        margin: 0 1.5rem 0 1.5rem;
+        height: 0rem;
+        transition: 0.5s ease-out;
     }
     #AccountsInput, #AccountsSubmit {
         max-width: 9.8rem;
@@ -30,6 +38,16 @@
         position: relative;
         margin: 0 1.5rem 0 1.5rem;
         display: block;
+        height: 17rem;
+        transition: 0.5s ease-out;
+    }
+    #AccountsForm-closed{
+        width: 100%;
+        position: relative;
+        margin: 0 1.5rem 0 1.5rem;
+        display:block;
+        height: 0rem;
+        transition: 0.5s ease-out;
     }
     #AccountsInput, #AccountsSubmit{
         max-width: 80%;
@@ -48,6 +66,16 @@
         position: relative;
         margin: 0 1.5rem 0 1.5rem;
         display: block;
+        height: 17rem;
+        transition: 0.5s ease-out;
+    }
+    #AccountsForm-closed{
+        width: 100%;
+        position: relative;
+        margin: 0 1.5rem 0 1.5rem;
+        display:block;
+        height: 0rem;
+        transition: 0.5s ease-out;
     }
     #AccountsInput, #AccountsSubmit{
         max-width: 80%;

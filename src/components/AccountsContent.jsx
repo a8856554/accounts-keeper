@@ -4,6 +4,8 @@ import './AccountsContent.css';
 import AccountsForm from './AccountsForm.jsx'
 import AccountsTable from './AccountsTable.jsx'
 import {addAccountItem, getAccountsData} from '../api/accounts-keeper-api.js';
+import ExpandedButton from './ExpandedButton.jsx';
+
 export default class AccountsContent extends React.Component {
     constructor(props) {
         super(props);
@@ -15,13 +17,14 @@ export default class AccountsContent extends React.Component {
         this.addAccountItem = this.addAccountItem.bind(this);
         this.getAccountsData = this.getAccountsData.bind(this);
     }
-
+    
     render() {
+        
         return (
             <div className={`account-content-bg ${this.state.bg}`}>
                 <div className={`account-content`}>
                     <div className={`ceiling`}></div>
-                    <AccountsForm addItem = {this.addAccountItem}/>
+                    <ExpandedButton callback = {this.addAccountItem}/>
                     <AccountsTable newItem = {this.state.item} getAccountsData = {this.getAccountsData}/>
                 </div>
             </div>

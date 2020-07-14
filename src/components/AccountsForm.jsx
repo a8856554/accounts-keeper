@@ -21,33 +21,33 @@ export default class AccountsForm extends React.Component {
         this.inputExist = this.inputExist.bind(this);
         this.clearInputElement = this.clearInputElement.bind(this);
     }
-
+    
     render() {
         return (
-            <Form id="AccountsForm" onSubmit={this.handleSubmit} inline>
-              <FormGroup>
-                <Label for="exampleConsumption" hidden>Consumption</Label>
-                <Input type="text" name="consumption" id="AccountsInput" innerRef={el => {this._inputElement.consumption = el}} onChange={this.handleInputChange } placeholder="消費品項" />
-              </FormGroup>
-              {' '}
-              <FormGroup>
-                <Label for="exampleAmount" hidden>Amount</Label>
-                <Input type="number" name="amount" id="AccountsInput" min="0.00" step="0.01" innerRef={el => {this._inputElement.amount = el}} onChange={this.handleInputChange } placeholder="金額" />
-              </FormGroup>
-              {' '}
-              <FormGroup>
-                <Label for="exampleDate" hidden>Date</Label>
-                <Input type="date" name="date" id="AccountsInput" innerRef={el => {this._inputElement.date = el}} onChange={this.handleInputChange } placeholder="日期" />
-              </FormGroup>
-              {' '}
-              <FormGroup id = "TagFormGroup">
-                <Label for="exampleTag" hidden>Tag</Label>
-                <Input type="text" name="tag" id="TagInput"  innerRef={el => {this._inputElement.tag = el}} onChange={this.handleInputChange } placeholder="Tag" />
-              </FormGroup>
-              {' '}
-              <Button color="info" id="AccountsSubmit" innerRef={el => {this._inputElement.submit = el}}>Submit</Button>
+            <Form id ={`AccountsForm${this.props.closed}`} onSubmit={this.handleSubmit} inline>
+                    <FormGroup>
+                        <Label for="exampleConsumption" hidden>Consumption</Label>
+                        <Input type="text" name="consumption" id="AccountsInput" innerRef={el => {this._inputElement.consumption = el}} onChange={this.handleInputChange } placeholder="消費品項" />
+                    </FormGroup>
+                    {' '}
+                    <FormGroup>
+                        <Label for="exampleAmount" hidden>Amount</Label>
+                        <Input type="number" name="amount" id="AccountsInput" min="0.00" step="0.01" innerRef={el => {this._inputElement.amount = el}} onChange={this.handleInputChange } placeholder="金額" />
+                    </FormGroup>
+                    {' '}
+                    <FormGroup>
+                        <Label for="exampleDate" hidden>Date</Label>
+                        <Input type="date" name="date" id="AccountsInput" innerRef={el => {this._inputElement.date = el}} onChange={this.handleInputChange } placeholder="日期" />
+                    </FormGroup>
+                    {' '}
+                    <FormGroup id = "TagFormGroup">
+                        <Label for="exampleTag" hidden>Tag</Label>
+                        <Input type="text" name="tag" id="TagInput"  innerRef={el => {this._inputElement.tag = el}} onChange={this.handleInputChange } placeholder="Tag" />
+                    </FormGroup>
+                    {' '}
+                    <Button color="info" id="AccountsSubmit" innerRef={el => {this._inputElement.submit = el}}>Submit</Button>
             </Form>
-          );
+        )
     }
 
     handleInputChange(e) {
