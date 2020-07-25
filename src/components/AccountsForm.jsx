@@ -9,8 +9,8 @@ export default class AccountsForm extends React.Component {
         this._inputElement = {};
         this.state = {
             bg: "init",
-            consumption: "",
-            amount: 0,
+            itemName: "",
+            cost: 0,
             date: "",
             tag: "",
             items: {}
@@ -26,13 +26,13 @@ export default class AccountsForm extends React.Component {
         return (
             <Form id ={`AccountsForm${this.props.closed}`} onSubmit={this.handleSubmit} inline>
                     <FormGroup>
-                        <Label for="exampleConsumption" hidden>Consumption</Label>
-                        <Input type="text" name="consumption" id="AccountsInput" innerRef={el => {this._inputElement.consumption = el}} onChange={this.handleInputChange } placeholder="消費品項" />
+                        <Label for="exampleItemName" hidden>ItemName</Label>
+                        <Input type="text" name="itemName" id="AccountsInput" innerRef={el => {this._inputElement.itemName = el}} onChange={this.handleInputChange } placeholder="消費品項" />
                     </FormGroup>
                     {' '}
                     <FormGroup>
-                        <Label for="exampleAmount" hidden>Amount</Label>
-                        <Input type="number" name="amount" id="AccountsInput" min="0.00" step="0.01" innerRef={el => {this._inputElement.amount = el}} onChange={this.handleInputChange } placeholder="金額" />
+                        <Label for="exampleCost" hidden>Cost</Label>
+                        <Input type="number" name="cost" id="AccountsInput" min="0.00" step="0.01" innerRef={el => {this._inputElement.cost = el}} onChange={this.handleInputChange } placeholder="金額" />
                     </FormGroup>
                     {' '}
                     <FormGroup>
@@ -52,7 +52,7 @@ export default class AccountsForm extends React.Component {
 
     handleInputChange(e) {
         let value = e.target.value;
-        if(e.target.name === "amount") {
+        if(e.target.name === "cost") {
             value = parseFloat(value);
         }
         this.setState(
@@ -67,8 +67,8 @@ export default class AccountsForm extends React.Component {
         if(this.inputExist()){  
             this.setState((prevState) => {
                 let newItem = {
-                    consumption: prevState.consumption,
-                    amount: prevState.amount,
+                    itemName: prevState.itemName,
+                    cost: prevState.cost,
                     date: prevState.date,
                     tag: prevState.tag,
                     key: Date.now()
@@ -77,8 +77,8 @@ export default class AccountsForm extends React.Component {
                 this.props.addItem(newItem);
                 return { 
                     items: newItem,
-                    consumption: "",
-                    amount: 0,
+                    itemName: "",
+                    cost: 0,
                     date: "",
                     tag: ""
                 };
@@ -94,9 +94,9 @@ export default class AccountsForm extends React.Component {
     inputExist(){
         let exist = true;
          
-        if(this.state.consumption === "")
+        if(this.state.itemName === "")
             exist = false;
-        if(this.state.amount === 0)
+        if(this.state.cost === 0)
             exist = false;
         if(this.state.date === "")
             exist = false;
@@ -104,8 +104,8 @@ export default class AccountsForm extends React.Component {
     }
 
     clearInputElement(){
-        this._inputElement.consumption.value = "";
-        this._inputElement.amount.value = 0;
+        this._inputElement.itemName.value = "";
+        this._inputElement.cost.value = 0;
         this._inputElement.date.value = "";
         this._inputElement.tag.value = "";
         //this._inputElement.submit.block = true;

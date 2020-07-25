@@ -6,6 +6,8 @@ import AccountsTable from './AccountsTable.jsx'
 import {addAccountItem, getAccountsData} from '../api/accounts-keeper-api.js';
 import ExpandedButton from './ExpandedButton.jsx';
 
+
+
 export default class AccountsContent extends React.Component {
     constructor(props) {
         super(props);
@@ -38,7 +40,7 @@ export default class AccountsContent extends React.Component {
     addAccountItem(newItem){
         this.setState( { item: newItem } );
         //accounts-keeper-api.js
-        addAccountItem( newItem );
+        //addAccountItem( newItem );
     }
 
     

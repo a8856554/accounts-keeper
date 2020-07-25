@@ -1,0 +1,18 @@
+#calendar-popoverbody {
+    padding: 0 0 0 0;
+    text-align: center
+}
+
+.popover.show.bs-popover-auto {
+    max-width: 300px;
+}
+
+#PopoverLegacy {
+    border-radius: 50rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+#popover-submit {
+    border-radius: 50rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+}

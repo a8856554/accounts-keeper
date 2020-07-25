@@ -2,6 +2,8 @@ import React from 'react';
 import AccountsForm from './AccountsForm.jsx'
 import { Button } from 'reactstrap';
 import './ExpandedButton.css'
+//import CalendarModal from './CalendarModal';
+import CalendarPopover from './CalendarPopover';
 export default class ExpandedButton extends React.Component {
     constructor(props) {
         super(props);
@@ -13,23 +15,19 @@ export default class ExpandedButton extends React.Component {
     }
     
     render() {
-        return this.state.toggle ? 
-        (
+        return (
             <div id="expanded-container">
+                <div id = "expanded-button-bar">
                 <Button id = "expanded-button" onClick = { this.toggleButton }  color="info">
                     <i className="fas fa-plus"></i>
                 </Button>{' '}
-                <AccountsForm closed = "" addItem = {this.props.callback}/>
-            </div>
-        ) :
-        (
-            <div id="expanded-container">
-                <Button id = "expanded-button" onClick = { this.toggleButton }  color="info">
-                    <i className="fas fa-plus"></i>
-                </Button>{' '}
-                <AccountsForm closed = "-closed" addItem = {this.props.callback}/>
+                <CalendarPopover />
+                </div>
+                
+                <AccountsForm closed = {this.state.toggle ? "" : "-closed"} addItem = {this.props.callback}/>
             </div>
         ) ;
+        
     }
 
     toggleButton(){

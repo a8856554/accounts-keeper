@@ -7,14 +7,16 @@
         position: relative;
         margin: 0 1.5rem 0 1.5rem;
         height: 6.8rem;
-        transition: 0.5s ease-out;
+        opacity: 1;
+        transition:  0.5s cubic-bezier(0, 0, 0.2, 1);
     }
     #AccountsForm-closed{
         width: 100%;
         position: relative;
         margin: 0 1.5rem 0 1.5rem;
         height: 0rem;
-        transition: 0.5s ease-out;
+        opacity: 0;
+        transition:  0.5s cubic-bezier(0, 0, 0.2, 1);
     }
     #AccountsInput, #AccountsSubmit {
         max-width: 9.8rem;
@@ -39,7 +41,8 @@
         margin: 0 1.5rem 0 1.5rem;
         display: block;
         height: 17rem;
-        transition: 0.5s ease-out;
+        opacity: 1;
+        transition: 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     #AccountsForm-closed{
         width: 100%;
@@ -47,7 +50,8 @@
         margin: 0 1.5rem 0 1.5rem;
         display:block;
         height: 0rem;
-        transition: 0.5s ease-out;
+        opacity: 0;
+        transition: 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     #AccountsInput, #AccountsSubmit{
         max-width: 80%;
@@ -67,7 +71,8 @@
         margin: 0 1.5rem 0 1.5rem;
         display: block;
         height: 17rem;
-        transition: 0.5s ease-out;
+        opacity: 1;
+        transition: 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     #AccountsForm-closed{
         width: 100%;
@@ -75,7 +80,8 @@
         margin: 0 1.5rem 0 1.5rem;
         display:block;
         height: 0rem;
-        transition: 0.5s ease-out;
+        opacity: 0;
+        transition:  0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
     #AccountsInput, #AccountsSubmit{
         max-width: 80%;
